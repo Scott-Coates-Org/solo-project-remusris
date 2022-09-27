@@ -7,32 +7,46 @@ chrome.history.search({
     text: '',
     startTime: oneWeekAgo,
     maxResults: 10
-},  function(data) {
+    },  
+
+    function(data) {
         data.forEach(function(page) {
             console.log(page.url);
             browsingHistoryList.push(page);
     });
 });
 
+
+
+
 // var historyVisits = function(visits) {
 
-//     var ul = document.createElement('ul');
+//     var ul = document.createElement('ul');   
 
 //     for (visits in browsingHistoryList) {
 
 //     }
 // }
 
-var ul = document.createElement('ul');
+// var ul = document.createElement('ul');
 
-for (i = 0, i <= browsingHistoryList.length - 1, i++) {
-    var li = document.createElement('li');
-    li.innerHTML = browsingHistoryList[i];
+// function listCreator {
+//     for ( i = 0, i <= browsingHistoryList.length - 1, i++) {
+//         var li = document.createElement('li');
+//         li.innerHTML = browsingHistoryList[i];
 
-    ul.appendChild(li);
-}
+//         ul.appendChild(li);
+//     }
+// }
 
-// const myCallBack = (details) => console.log(JSON.stringify(details.transitionQualifiers));
+
+// function createList(data) {
+
+// }
+
+realTimeBrowsingHistory = []
+
+const myCallBack = (details) => console.log(JSON.stringify(details.transitionQualifiers));
 
 const myFilters = 
 chrome.webNavigation.onHistoryStateUpdated.addListener(
@@ -45,7 +59,10 @@ chrome.webNavigation.onHistoryStateUpdated.addListener(
 //     }
 );
 
-
+const secondFilter = 
+chrome.webNavigation.onHistoryStateUpdated.addListener(
+    function(details) {realTimeBrowsingHistory.push(details)}
+);
 
 
 

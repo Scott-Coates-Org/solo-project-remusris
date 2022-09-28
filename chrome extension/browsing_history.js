@@ -64,7 +64,24 @@ chrome.webNavigation.onHistoryStateUpdated.addListener(
     function(details) {realTimeBrowsingHistory.push(details)}
 );
 
+const docCanvas = document.getElementById('container');
 
+const ul = document.createElement('ul');
+
+for (i = 0; i <= realTimeBrowsingHistory.length - 1, i++) {
+    const li - document.createElement('li');
+
+    li.innerHTML = realTimeBrowsingHistory[i];
+    ul.appendChild(li);
+}
+
+docCanvas.appendChild(ul)
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    buildTypedUrlList("typedUrl_div");
+  });
 
 
 

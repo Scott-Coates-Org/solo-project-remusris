@@ -16,6 +16,11 @@ chrome.history.search({
     });
 });
 
+// console.log(browsingHistoryList);
+
+browsingHistoryList.forEach(function(element) {
+    console.log(element);
+})
 
 
 
@@ -44,51 +49,41 @@ chrome.history.search({
 
 // }
 
-realTimeBrowsingHistory = []
+// realTimeBrowsingHistory = []
 
-const myCallBack = (details) => console.log(JSON.stringify(details.transitionQualifiers));
+// const myCallBack = (details) => console.log(JSON.stringify(details.transitionQualifiers));
 
-const myFilters = 
-chrome.webNavigation.onHistoryStateUpdated.addListener(
-    myCallBack
-    // function(details) {console.log(JSON.stringify(details.transitionQualifiers))}
-//    function(details) {
-//         // console.log(details.transitionQualifier)
-//         // print(JSON.stringify(details.transitionType))
-        
+// const myFilters = 
+// chrome.webNavigation.onHistoryStateUpdated.addListener(
+//     myCallBack
+//     function(details) {console.log(JSON.stringify(details.transitionQualifiers))}
+//     function(details) {
+//         console.log(details.transitionQualifier)
+//         print(JSON.stringify(details.transitionType))
 //     }
-);
+// );
 
-const secondFilter = 
-chrome.webNavigation.onHistoryStateUpdated.addListener(
-    function(details) {realTimeBrowsingHistory.push(details)}
-);
+// const secondFilter = 
+// chrome.webNavigation.onHistoryStateUpdated.addListener(
+//     function(details) {realTimeBrowsingHistory.push(details)}
+// );
 
-const docCanvas = document.getElementById('container');
+// const docCanvas = document.getElementById('container');
 
-const ul = document.createElement('ul');
+// const ul = document.createElement('ul');
 
-for (i = 0; i <= realTimeBrowsingHistory.length - 1, i++) {
-    const li - document.createElement('li');
+// for (i = 0; i <= realTimeBrowsingHistory.length - 1, i++) {
+//     const li - document.createElement('li');
 
-    li.innerHTML = realTimeBrowsingHistory[i];
-    ul.appendChild(li);
-}
+//     li.innerHTML = realTimeBrowsingHistory[i];
+//     ul.appendChild(li);
+// }
 
-docCanvas.appendChild(ul)
+// docCanvas.appendChild(ul)
 
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    buildTypedUrlList("typedUrl_div");
-  });
-
-
-
-
-
-
-
+// document.addEventListener('DOMContentLoaded', function () {
+//     buildTypedUrlList("typedUrl_div");
+//   });
 
 
 // async function getCurrentTab() {

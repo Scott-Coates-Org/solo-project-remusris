@@ -16,7 +16,7 @@ chrome.history.search({
     });
 });
 
-// console.log(browsingHistoryList);
+console.log(browsingHistoryList);
 
 browsingHistoryList.forEach(function(element) {
     console.log(element);

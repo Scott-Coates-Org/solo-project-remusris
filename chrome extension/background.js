@@ -12,7 +12,11 @@ chrome.history.search({
     function(data) {
         data.forEach(function(page) {
             console.log(page.url);
-            browsingHistoryList.push(page);
+            browsingHistoryList.push(page.url);
+            // browsingHistoryList.push(page.lastVisitTime);
+            var timeInMilliseconds = page.lastVisitTime;
+            let newDate = new Date(timeInMilliseconds);
+            browsingHistoryList.push(newDate);
     });
 });
 
@@ -22,6 +26,9 @@ browsingHistoryList.forEach(function(element) {
     console.log(element);
 })
 
+// function dateChanger(entryDate) {
+//     let newDate = new Date(entryDate);
+// }
 
 
 // var historyVisits = function(visits) {

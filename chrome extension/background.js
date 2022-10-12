@@ -14,17 +14,22 @@ chrome.history.search({
             console.log(page.url);
             browsingHistoryList.push(page.url);
             // browsingHistoryList.push(page.lastVisitTime);
-            var timeInMilliseconds = page.lastVisitTime;
-            let newDate = new Date(timeInMilliseconds);
-            browsingHistoryList.push(newDate);
+            // var timeInMilliseconds = page.lastVisitTime;
+            // let newDate = new Date(timeInMilliseconds);
+            // browsingHistoryList.push(newDate);
+            chrome.runtime.sendMessage(
+                "urlToOutput", page.url, (response) => {
+                    console.log(response.message);
+                } 
+            )
     });
 });
 
-console.log(browsingHistoryList);
+// console.log(browsingHistoryList);
 
-browsingHistoryList.forEach(function(element) {
-    console.log(element);
-})
+// browsingHistoryList.forEach(function(element) {
+//     console.log(element);
+// })
 
 // function dateChanger(entryDate) {
 //     let newDate = new Date(entryDate);

@@ -18,10 +18,10 @@ chrome.history.search({
             // let newDate = new Date(timeInMilliseconds);
             // browsingHistoryList.push(newDate);
             chrome.runtime.sendMessage(
-                "urlToOutput", page.url, (response) => {
-                    console.log(response.message);
-                } 
-            )
+                {url: "test"}, function(response) {
+                        console.log(response.endPoint);
+                }
+            );
     });
 });
 

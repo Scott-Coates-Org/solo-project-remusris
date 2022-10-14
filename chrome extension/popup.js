@@ -1,8 +1,12 @@
 browsingHistoryListToRender = []
 
 chrome.runtime.onMessage.addListener(
-    (message, sender, sendResponse) => {
-        browsingHistoryListToRender.append(message)
-    }
+    function(request, sender, sendResponse) {
+        browsingHistoryListToRender.append(request.url);
 
+        nonsenese = sender
+    
+    sendResponse({endPoint: "roger that"});
+    }
 );
+
